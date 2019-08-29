@@ -1,7 +1,6 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
-from PIL import Image
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get('https://play.typeracer.com')
 time.sleep(3)
@@ -25,9 +24,3 @@ time.sleep(11)
 
 inputBox = driver.find_element_by_class_name("txtInput")
 inputBox.send_keys(stuffToType)
-time.sleep(3)
-try:
-    beginTestButton = driver.find_element_by_class_name('gwt-Button')
-    beginTestButton.click()
-except:
-    print("Disqualified")
